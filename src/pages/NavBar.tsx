@@ -2,6 +2,7 @@ import { Layout, Menu } from 'antd';
 import { useNavigate } from 'react-router-dom';
 import DropDown from '../components/ui/DropDown';
 import { TMenuItem } from '../types';
+import { useState } from 'react';
 
 const { Header } = Layout;
 
@@ -13,14 +14,16 @@ const items: TMenuItem[] = [
 
 export default function NavBar() {
     const navigate = useNavigate();
+    const [activeKey, setActiveKey] = useState('1');
 
     const handleMenuClick = (info: { key: string }) => {
         const selectedItem = items.find(menuItem => menuItem.key === info.key);
         if (selectedItem) {
             navigate(selectedItem.path);
         }
+        setActiveKey(info.key);
     };
-
+   
     return (
         <Layout>
             <Header
@@ -39,8 +42,12 @@ export default function NavBar() {
                 <Menu
                     theme="dark"
                     mode="horizontal"
-                    defaultSelectedKeys={['1']}
-                    items={items.map(item => ({ ...item, label: item.label }))}
+                    // defaultSelectedKeys={['1']}
+                    items={items.map(item => ({
+                        ...item,
+                        label: item.label,
+                        style: item.key === activeKey ? { color: 'white' , backgroundColor: '#001529' } : {}, // Apply style conditionally
+                    }))}
                     onClick={handleMenuClick}
                     style={{
                         flex: 1,
@@ -48,6 +55,7 @@ export default function NavBar() {
                         justifyContent: 'center', // Center the menu items
                         display: 'flex',
                         alignItems: 'center'
+                        
                     }}
                 />
                 <DropDown />

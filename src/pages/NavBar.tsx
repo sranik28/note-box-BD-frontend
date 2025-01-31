@@ -1,20 +1,28 @@
-
-import {  Layout, Menu } from 'antd';
+import { Layout, Menu } from 'antd';
+import { useNavigate } from 'react-router-dom';
 import DropDown from '../components/ui/DropDown';
+import { TMenuItem } from '../types';
 
-const { Header} = Layout;
+const { Header } = Layout;
 
-const items = new Array(3).fill(null).map((_, index) => ({
-    key: String(index + 1),
-    label: `nav ${index + 1}`,
-}));
-
-
-
+const items: TMenuItem[] = [
+    { key: '1', label: 'Home', path: '/' },
+    { key: '2', label: 'All Product', path: '/all-product' },
+    // { key: '3', label: 'Contact', path: '/contact' },
+];
 
 export default function NavBar() {
+    const navigate = useNavigate();
+
+    const handleMenuClick = (info: { key: string }) => {
+        const selectedItem = items.find(menuItem => menuItem.key === info.key);
+        if (selectedItem) {
+            navigate(selectedItem.path);
+        }
+    };
+
     return (
-        <Layout >
+        <Layout>
             <Header
                 style={{
                     position: 'sticky',
@@ -23,21 +31,27 @@ export default function NavBar() {
                     width: '100%',
                     display: 'flex',
                     alignItems: 'center',
-                    justifyContent: 'center',
                 }}
             >
-                <div style={{ fontSize: '1.5rem', fontWeight: 'bold' , color: 'white' , marginRight: '1rem' }} >
+                <div style={{ fontSize: '1.5rem', fontWeight: 'bold', color: 'white', marginRight: '1rem' }}>
                     Not Box BD
                 </div>
                 <Menu
                     theme="dark"
                     mode="horizontal"
-                    defaultSelectedKeys={['2']}
-                    items={items}
-                    style={{ flex: 1, minWidth: 0 }}
+                    defaultSelectedKeys={['1']}
+                    items={items.map(item => ({ ...item, label: item.label }))}
+                    onClick={handleMenuClick}
+                    style={{
+                        flex: 1,
+                        minWidth: 0,
+                        justifyContent: 'center', // Center the menu items
+                        display: 'flex',
+                        alignItems: 'center'
+                    }}
                 />
-                 <DropDown/>
+                <DropDown />
             </Header>
         </Layout>
-    )
+    );
 }

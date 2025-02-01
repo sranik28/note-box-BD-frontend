@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import DropDown from '../components/ui/DropDown';
 import { TMenuItem } from '../types';
 import { useState } from 'react';
+import NavTop from '../components/ui/NavTop';
 
 const { Header } = Layout;
 
@@ -26,6 +27,7 @@ export default function NavBar() {
    
     return (
         <Layout>
+            <NavTop/>
             <Header
                 style={{
                     position: 'sticky',

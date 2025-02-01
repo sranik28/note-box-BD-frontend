@@ -12,10 +12,16 @@ type TFormProps = {
   onSubmit: SubmitHandler<FieldValues>;
   children: ReactNode;
 } & TFormConfig;
-export default function NoteForm({ children, onSubmit }: TFormProps) {
+export default function NoteForm({ children, onSubmit, resolver }: TFormProps) {
 
   const formConfig: TFormConfig = {};
   const methods = useForm(formConfig);
+
+
+  if (resolver) {
+    formConfig["resolver"] = resolver;
+  }
+
 
   const handelFormSubmit: SubmitHandler<FieldValues> = (data) => {
     onSubmit(data)
@@ -24,7 +30,7 @@ export default function NoteForm({ children, onSubmit }: TFormProps) {
 
   return (
     <FormProvider {...methods}>
-      <Form onFinish={methods.handleSubmit(handelFormSubmit)}>
+      <Form layout="vertical" onFinish={methods.handleSubmit(handelFormSubmit)}>
         {children}
       </Form>
     </FormProvider>

@@ -11,3 +11,7 @@
   max-width: 1420px;
   margin: 0 auto;
 }
+
+.bg-primary {
+  background-color: #1890ff;
+}

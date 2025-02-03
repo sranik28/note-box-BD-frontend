@@ -12,25 +12,25 @@ import img4 from '../../assets/banner/top-view-collection-stationery-objects-tab
 
 const BannerSlider: React.FC = () => {
   return (
-    
-      <Swiper pagination={true} autoplay={{
-        delay: 2000,
-        disableOnInteraction: false,
-      }} modules={[Pagination, Autoplay, Navigation]} className="mySwiper w-full h-[100%]  ">
-        <SwiperSlide>
-          <img className='rounded-md w-full h-[100%]'  src={img1} alt="" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img className='rounded-md w-full h-[100%]' src={img2} alt="" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img className='rounded-md w-full h-[100%]' src={img3} alt="" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img className='rounded-md w-full h-[100%]' src={img4} alt="" />
-        </SwiperSlide>
-      </Swiper>
-    
+
+    <Swiper pagination={true} autoplay={{
+      delay: 5000,
+      disableOnInteraction: false,
+    }} modules={[Pagination,Autoplay, Navigation]} className="mySwiper w-full h-[100%]">
+      <SwiperSlide>
+        <img className='' src={img1} alt="" />
+      </SwiperSlide>
+      <SwiperSlide>
+        <img className='' src={img2} alt="" />
+      </SwiperSlide>
+      <SwiperSlide>
+        <img className='' src={img3} alt="" />
+      </SwiperSlide>
+      <SwiperSlide>
+        <img className='' src={img4} alt="" />
+      </SwiperSlide>
+    </Swiper>
+
   );
 };
 

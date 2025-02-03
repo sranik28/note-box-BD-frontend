@@ -4,6 +4,7 @@ import DropDown from '../components/ui/DropDown';
 import { TMenuItem } from '../types';
 import { useState } from 'react';
 import NavTop from '../components/ui/NavTop';
+import logo from '../assets/logo/Red_And_Black_Personalized_Stationery_Logo__1_-removebg-preview.png';
 
 const { Header } = Layout;
 
@@ -38,8 +39,8 @@ export default function NavBar() {
                     alignItems: 'center',
                 }}
             >
-                <div style={{ fontSize: '1.5rem', fontWeight: 'bold', color: 'white', marginRight: '1rem' }}>
-                    Not Box BD
+                <div className="" style={{ fontSize: '1.5rem', fontWeight: 'bold', color: '#1890ff', marginRight: '1rem' }}>
+                    <img src={logo} alt="Logo" style={{ width: '100px', height: '100px' }} />
                 </div>
                 <Menu
                 className='container '

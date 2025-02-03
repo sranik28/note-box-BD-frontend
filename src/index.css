@@ -1,9 +1,10 @@
+@import "tailwindcss";
 *{
   margin: 0;
 }
 
 .container {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1420px;
   margin: 0 auto;
 }

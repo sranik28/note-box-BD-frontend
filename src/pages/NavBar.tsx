@@ -42,6 +42,7 @@ export default function NavBar() {
                     Not Box BD
                 </div>
                 <Menu
+                className='container '
                     theme="dark"
                     mode="horizontal"
                     // defaultSelectedKeys={['1']}

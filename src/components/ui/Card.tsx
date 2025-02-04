@@ -1,13 +1,19 @@
 import '../../styles/Card.css';
 
-export default function Card({ image, title, price, size }: any) {
+interface CardProps {
+  image: string;
+  title: string;
+  price: string;
+}
+
+export default function Card({ image, title, price }: CardProps) {
   return (
-    <div>
-      <div className="card">
-        <div className="image_container">
-          <img src={image} alt="" />
+    <div style={{ width: "100%" }} className="w-full">
+      <div className=" card shadow-md ">
+        <div  className="image_container ">
+          <img className='w-52 h-52 mx-auto rounded-md shadow-md '  src={image} alt="" />
         </div>
-        <div className="title">
+        <div className="title text-xl">
           <span>{title}</span>
         </div>
         {/* <div className="size ">

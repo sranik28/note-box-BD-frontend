@@ -8,7 +8,7 @@ import colorPencils from '../../assets/new arrival/group-colored-pencils-with-he
 
 export default function Categories() {
 
-    const newArrivalItems = [
+    const categoryItems = [
         {
           id: "1",
           image: note,
@@ -51,12 +51,19 @@ export default function Categories() {
           price: "$60",
     
         },
+        {
+          id: "7",
+          image: colorPencils,
+          title: "Color pencils",
+          price: "$60",
+    
+        },
       ]
 
   return (
     <div>
         <SectionHeader title="Categories"/>
-        <Slider items={newArrivalItems}/>
+        <Slider items={categoryItems}/>
     </div>
   )
 }

@@ -55,12 +55,13 @@ export default function NewArrival() {
     },
   ]
 
+ 
   return (
     <div style={{ marginTop: "50px", marginBottom: "50px" }} className="container ">
       <SectionHeader title="New Arrival" />
       <CardSlider items={newArrivalItems} />
       <Link to="/all-product">
-      <button className="py-2 px-4 text-white rounded-md mt-5 flex items-center justify-center mx-auto bg-primary">
+      <button className="py-2 px-4 text-white rounded-md mt-10 flex items-center justify-center mx-auto bg-primary">
         view all
       </button>
       </Link>

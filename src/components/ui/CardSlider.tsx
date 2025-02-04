@@ -23,6 +23,9 @@ export default function CardSlider({ items }: { items: CardProps[] }) {
                     slidesPerView: 2,
                 },
                 768: {
+                    slidesPerView: 3,
+                },
+                1024: {
                     slidesPerView: 4,
                 },
             }}

@@ -3,14 +3,15 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import { Autoplay, Navigation, Pagination } from 'swiper/modules';
 import Card, { CardProps } from '../ui/Card';
+import { Link } from 'react-router-dom';
 
 
-export default function CardSlider({ items }:{ items: CardProps[] }) {
+export default function CardSlider({ items }: { items: CardProps[] }) {
     return (
         <Swiper
             slidesPerView={1}
             spaceBetween={30}
-            pagination={{ dynamicMainBullets : 2 }}
+            pagination={{ dynamicMainBullets: 2 }}
             autoplay={{
                 delay: 2000,
                 disableOnInteraction: false,
@@ -28,7 +29,9 @@ export default function CardSlider({ items }:{ items: CardProps[] }) {
         >
             {items?.map((item) => (
                 <SwiperSlide key={item.id}>
-                    <Card image={item.image} title={item.title} price={item.price} />
+                    <Link to={`/${item.id}/product-detail`}>
+                        <Card image={item.image} title={item.title} price={item.price} />
+                    </Link>
                 </SwiperSlide>
             ))}
         </Swiper>

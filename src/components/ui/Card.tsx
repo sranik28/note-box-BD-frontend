@@ -14,7 +14,7 @@ export default function Card({ image, title, price }: CardProps) {
     <div style={{ width: "100%" }} className="w-full">
       <div className=" card shadow-md ">
         <div  className="image_container ">
-          <img className='w-52 h-52 mx-auto rounded-md shadow-md '  src={image} alt="" />
+          <img className='w-52 h-52 mx-auto rounded-md shadow-md transition-all duration-500  group-hover:scale-110'  src={image} alt="" />
         </div>
         <div className="title text-xl">
           <span>{title}</span>

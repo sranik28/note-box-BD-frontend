@@ -6,6 +6,7 @@ import book from '../../assets/new arrival/0187201a-6bb4-4a47-8069-a9d1f97dc615.
 import colorPen from '../../assets/new arrival/41915.jpg';
 import colorPaper from '../../assets/new arrival/overhead-view-colorful-craftpapers.jpg';
 import colorPencils from '../../assets/new arrival/group-colored-pencils-with-heart-shaped.jpg';
+import { Link } from "react-router-dom";
 
 
 export default function NewArrival() {
@@ -58,9 +59,11 @@ export default function NewArrival() {
     <div style={{ marginTop: "50px", marginBottom: "50px" }} className="container ">
       <SectionHeader title="New Arrival" />
       <CardSlider items={newArrivalItems} />
+      <Link to="/all-product">
       <button className="py-2 px-4 text-white rounded-md mt-5 flex items-center justify-center mx-auto bg-primary">
         view all
       </button>
+      </Link>
     </div>
   );
 }

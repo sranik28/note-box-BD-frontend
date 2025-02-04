@@ -1,47 +1,36 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
-
-// Import Swiper styles
 import 'swiper/css';
-import 'swiper/css/grid';
 import 'swiper/css/pagination';
-// import required modules
-import { Grid, Pagination } from 'swiper/modules';
+import { Autoplay, Navigation, Pagination } from 'swiper/modules';
+import Card, { CardProps } from '../ui/Card';
 
-export default function CardSlider({children}) {
-  return (
-    <>
-      <Swiper
-        slidesPerView={3}
-        grid={{
-          rows: 2,
-        }}
-        spaceBetween={30}
-        pagination={{
-          clickable: true,
-        }}
-        modules={[Grid, Pagination]}
-        className="mySwiper"
-      >
-        <SwiperSlide>{children}</SwiperSlide>
-        <SwiperSlide>Slide 2</SwiperSlide>
-        <SwiperSlide>Slide 3</SwiperSlide>
-        <SwiperSlide>Slide 4</SwiperSlide>
-        <SwiperSlide>Slide 5</SwiperSlide>
-        <SwiperSlide>Slide 6</SwiperSlide>
-        <SwiperSlide>Slide 7</SwiperSlide>
-        <SwiperSlide>Slide 8</SwiperSlide>
-        <SwiperSlide>Slide 9</SwiperSlide>
-        <SwiperSlide>Slide 9</SwiperSlide>
-        <SwiperSlide>Slide 9</SwiperSlide>
-        <SwiperSlide>Slide 9</SwiperSlide>
-        <SwiperSlide>Slide 9</SwiperSlide>
-        <SwiperSlide>Slide 9</SwiperSlide>
-        <SwiperSlide>Slide 9</SwiperSlide>
-        <SwiperSlide>Slide 9</SwiperSlide>
-        <SwiperSlide>Slide 9</SwiperSlide>
-        <SwiperSlide>Slide 9</SwiperSlide>
-        <SwiperSlide>Slide 9</SwiperSlide>  
-      </Swiper>
-    </>
-  )
+
+export default function CardSlider({ items }:{ items: CardProps[] }) {
+    return (
+        <Swiper
+            slidesPerView={1}
+            spaceBetween={30}
+            pagination={{ dynamicMainBullets : 2 }}
+            autoplay={{
+                delay: 2000,
+                disableOnInteraction: false,
+            }}
+            modules={[Pagination, Autoplay, Navigation]}
+            className="mySwiper container w-full"
+            breakpoints={{
+                640: {
+                    slidesPerView: 2,
+                },
+                768: {
+                    slidesPerView: 4,
+                },
+            }}
+        >
+            {items?.map((item) => (
+                <SwiperSlide key={item.id}>
+                    <Card image={item.image} title={item.title} price={item.price} />
+                </SwiperSlide>
+            ))}
+        </Swiper>
+    );
 }

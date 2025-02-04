@@ -1,9 +1,12 @@
 import '../../styles/Card.css';
 
-interface CardProps {
+export interface CardProps {
+  id?:string
   image: string;
   title: string;
   price: string;
+  children?: React.ReactNode
+  className?: string
 }
 
 export default function Card({ image, title, price }: CardProps) {

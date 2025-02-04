@@ -8,7 +8,7 @@ export default function Home() {
     <>
       <Banner />
       <NewArrival/>
-      <CardSlider/>
+      <CardSlider />
     </>
   )
 }

@@ -1,5 +1,5 @@
 import { Layout, Menu } from 'antd';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import DropDown from '../components/ui/DropDown';
 import { TMenuItem } from '../types';
 import { useState } from 'react';
@@ -25,10 +25,10 @@ export default function NavBar() {
         }
         setActiveKey(info.key);
     };
-   
+
     return (
         <Layout>
-            <NavTop/>
+            <NavTop />
             <Header
                 style={{
                     position: 'sticky',
@@ -39,18 +39,20 @@ export default function NavBar() {
                     alignItems: 'center',
                 }}
             >
-                <div className="" style={{ fontSize: '1.5rem', fontWeight: 'bold', color: '#1890ff', marginRight: '1rem' }}>
-                    <img src={logo} alt="Logo" style={{ width: '100px', height: '100px' }} />
-                </div>
+                <Link to="/">
+                    <div className="" style={{ fontSize: '1.5rem', fontWeight: 'bold', color: '#1890ff', marginRight: '1rem' }}>
+                        <img src={logo} alt="Logo" style={{ width: '100px', height: '100px' }} />
+                    </div>
+                </Link>
                 <Menu
-                className='container '
+                    className='container '
                     theme="dark"
                     mode="horizontal"
                     // defaultSelectedKeys={['1']}
                     items={items.map(item => ({
                         ...item,
                         label: item.label,
-                        style: item.key === activeKey ? { color: 'white' , backgroundColor: '#001529' } : {}, // Apply style conditionally
+                        style: item.key === activeKey ? { color: 'white', backgroundColor: '#001529' } : {}, // Apply style conditionally
                     }))}
                     onClick={handleMenuClick}
                     style={{
@@ -59,7 +61,7 @@ export default function NavBar() {
                         justifyContent: 'center', // Center the menu items
                         display: 'flex',
                         alignItems: 'center'
-                        
+
                     }}
                 />
                 <DropDown />

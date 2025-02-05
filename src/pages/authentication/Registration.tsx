@@ -62,7 +62,7 @@ export default function Registration() {
               }}
             >
               <p>Already have an account? </p>
-              <Link to="/login">Login</Link>
+              <Link className="text-blue-500 underline" to="/login">Login</Link>
             </div>
           </Col>
         </Flex>

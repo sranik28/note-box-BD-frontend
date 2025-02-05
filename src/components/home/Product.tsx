@@ -61,12 +61,12 @@ export default function Product() {
         <div className="mt-20">
             <SectionHeader title="Product" />
             <div >
-            <CardSlider items={productItems} />
-            <Link to="/all-product">
-                <button className="py-2 px-4 text-white rounded-md mt-10 flex items-center justify-center mx-auto bg-primary">
-                    view all
-                </button>
-            </Link>
+                <CardSlider items={productItems} />
+                <Link to="/all-product">
+                    <button className="py-2 px-4 text-white rounded-md mt-10 flex items-center justify-center mx-auto bg-primary">
+                        view all
+                    </button>
+                </Link>
             </div>
         </div>
     )

@@ -55,7 +55,7 @@ export default function Login() {
               }}
             >
               <p>Don't have an account? </p>
-              <Link to="/register">Registration</Link>
+              <Link className="text-blue-500 underline" to="/register">Registration</Link>
             </div>
           </Col>
         </Flex>

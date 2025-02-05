@@ -34,7 +34,7 @@ export default function CardSlider({ items }: { items: CardProps[] }) {
             {items?.map((item) => (
                 <SwiperSlide key={item.id}>
                     <Link to={`/${item.id}/product-detail`}>
-                        <Card image={item.image} title={item.title} price={item.price} />
+                        <Card image={item.image} title={item.title} price={item.price} discount={item.discount} />
                     </Link>
                 </SwiperSlide>
             ))}

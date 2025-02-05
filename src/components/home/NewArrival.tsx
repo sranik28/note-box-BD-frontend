@@ -16,42 +16,42 @@ export default function NewArrival() {
       image: note,
       title: "Note book",
       price: "$10",
-
+      discount: "5%",
     },
     {
       id: "2",
       image: book,
       title: "pen",
       price: "$10",
-
+      discount: "5%",
     },
     {
       id: "3",
       image: colorPen,
       title: "Note book",
       price: "$10",
-
+      discount: "5%",
     },
     {
       id: "4",
       image: colorPen,
       title: "Note book",
       price: "$10",
-
+      discount: "5%",
     },
     {
       id: "5",
       image: colorPaper,
       title: "Color paper",
       price: "$5",
-
+      discount: "5%",
     },
     {
       id: "6",
       image: colorPencils,
       title: "Color pencils",
       price: "$60",
-
+      discount: "5%",
     },
   ]
 

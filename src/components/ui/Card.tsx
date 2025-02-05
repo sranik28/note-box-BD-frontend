@@ -5,19 +5,23 @@ export interface CardProps {
   image: string;
   title: string;
   price: string;
+  discount:string
   children?: React.ReactNode
   className?: string
 }
 
-export default function Card({ image, title, price }: CardProps) {
+export default function Card({ image, title, price,discount }: CardProps) {
   return (
     <div style={{ width: "100%" }} className="w-full">
       <div className=" card shadow-md ">
-        <div  className="image_container ">
+        <div  className="image_container relative">
           <img className='w-52 h-52 mx-auto rounded-md shadow-md transition-all duration-500  group-hover:scale-110'  src={image} alt="" />
+          <div className="absolute top-2 left-2 bg-red-500 text-white px-3 py-1 rounded-full text-sm z-10">
+            {discount}
+          </div>
         </div>
-        <div className="title text-xl">
-          <span>{title}</span>
+        <div className="title  ">
+          <span className='text-xl'>{title}</span>
         </div>
         {/* <div className="size ">
           <span>{size}</span>

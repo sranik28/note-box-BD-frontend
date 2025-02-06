@@ -11,7 +11,9 @@ const { Header } = Layout;
 const items: TMenuItem[] = [
     { key: '1', label: 'Home', path: '/' },
     { key: '2', label: 'All Product', path: '/all-product' },
-    // { key: '3', label: 'Contact', path: '/contact' },
+    { key: '3', label: 'About', path: '/about' },
+    { key: '4', label: 'Blog', path: '/blog' },
+    { key: '5', label: 'Contact', path: '/contact' },
 ];
 
 export default function NavBar() {

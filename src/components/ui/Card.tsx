@@ -10,8 +10,6 @@ export interface CardProps {
   className?: string
 }
 
-
-
 export default function Card({ image, title, price,discount }: CardProps) {
   return (
     <div style={{ width: "100%" }} className="w-full">
